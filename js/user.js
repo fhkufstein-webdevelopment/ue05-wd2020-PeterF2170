@@ -7,9 +7,7 @@ $(document).ready(function () {
         event.stopPropagation();
 
         if (this.checkValidity() === false) {
-
             $(this).addClass('was-validated');
-
             return false;
         }
 
@@ -21,7 +19,7 @@ $(document).ready(function () {
     });
 
 
-    $('.deleteTrigger').click(function () {
+    $(document).on('click', '.deleteTrigger', function(){
         if (confirm("wirklich Löschen?")) {
             $(this).parents("tr").remove();
             userNumber--;
